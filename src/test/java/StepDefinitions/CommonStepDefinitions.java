@@ -26,7 +26,6 @@ public class CommonStepDefinitions {
 		driver=new FirefoxDriver();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    Reporting report=new Reporting();
-//	    report.generatereport();
 	}
 	
 	public static WebDriver getDriver() {

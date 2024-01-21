@@ -7,7 +7,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class Reporting {
-	
+//	
 //	ExtentReports extent;
 //	ExtentSparkReporter spark;
 //	ExtentTest test;
@@ -21,6 +21,5 @@ public class Reporting {
 //	spark.config().setReportName("Test Report for Demo Corp Inc");
 //	extent.createTest("First Test").log(Status.PASS,"Pass");
 //	extent.createTest("Second Test").log(Status.FAIL,"Fail");
-//	}
 
 }

@@ -1,4 +1,4 @@
-package pageObjects;
+package com.democorp.myapp.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,8 +28,8 @@ public class LoginPage {
 		driver.findElement(btn_login).click();
 	}
 	
-	public void isLogoDisplayed() {
-		driver.findElement(lbl_logo).isDisplayed();
+	public boolean isLogoDisplayed() {
+		return driver.findElement(lbl_logo).isDisplayed();
 	}
 	
 	public void userLogin(String username,String password)

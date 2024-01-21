@@ -1,19 +1,12 @@
 package StepDefinitions;
 
 import java.io.IOException;
-import java.time.Duration;
-
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.apache.logging.log4j.*;
 import com.democorp.myapp.Pages.LoginPage;
 import com.democorp.myapp.utils.ReadConfig;
 import com.democorp.myapp.utils.XLUtils;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,6 +14,7 @@ import io.cucumber.java.en.When;
 
 public class LoginStepsDefinitions extends BaseClass {
 	WebDriver driver=CommonStepDefinitions.getDriver();
+
 	ReadConfig readConfig=new ReadConfig();
 	LoginPage login;
 	
@@ -44,7 +38,6 @@ public class LoginStepsDefinitions extends BaseClass {
 		String path=System.getProperty("user.dir")+"/src/test/resources/data/userdata.xlsx";
 		String username=XLUtils.getCellData(path, "Sheet1", 1, 0);
 		String password=XLUtils.getCellData(path, "Sheet1", 1, 1);
-		System.out.println(path+"$$$$$$$"+username+"$$$$$$$"+password);
 		login.enterUserName(username);
 		login.enterPassword(password);
 	}

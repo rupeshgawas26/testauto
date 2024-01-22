@@ -22,24 +22,25 @@ public class LoginStepsDefinitions extends BaseClass {
 	public void user_is_on_login_page() {
 	    driver.get(readConfig.getApplicationURL());
 	    login=new LoginPage(driver);
-	    //logger.info("navigated to webpage successfully");
 	}
 
 	@When("User enters valid {string} and {string}")
-	public void user_enters_valid_and(String username, String password) throws InterruptedException {
+	public void user_enters_valid_and(String username, String password) throws InterruptedException, IOException {
 		
 		login.enterUserName(username);
-		login.enterPassword(password);
-//		logger.info("Entered credentials successfully");
+		login.enterPassword(password);	
 	}
 	@When("Enter username and password from excel")
 	public void enter_excel() throws InterruptedException, IOException {
-		XLUtils xlutils=new XLUtils();
+		XLUtils xlutils =new XLUtils();
 		String path=System.getProperty("user.dir")+"/src/test/resources/data/userdata.xlsx";
 		String username=XLUtils.getCellData(path, "Sheet1", 1, 0);
 		String password=XLUtils.getCellData(path, "Sheet1", 1, 1);
 		login.enterUserName(username);
 		login.enterPassword(password);
+//		String path=System.getProperty("user.dir")+"/src/test/resources/data/userdata.xlsx";
+//		XLUtils.setCellData(path,"Sheet1",2,0,readConfig.getApplicationURL());
+//		XLUtils.setCellData(path,"Sheet1",2,1,readConfig.getBrowser());	
 	}
 	
 
